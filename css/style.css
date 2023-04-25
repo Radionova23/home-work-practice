@@ -150,10 +150,26 @@ span {
 
 
 
-.site-nav .link { 
-   display: block;
-   padding-top: 24px;
-   padding-bottom: 24px;
+
+.site-nav .link:hover,
+.site-nav .link:focus {
+    color: var(--color-site-nav-hover);
+} 
+
+.item .link {
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0. 2,1);
+}
+.item .link:hover,
+.item .link:focus {
+    color: var(--color-site-nav-hover);
+}
+.site-nav .link {
+    position: relative;
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
 
 
     font-size: 16px;
@@ -163,11 +179,23 @@ span {
     letter-spacing: 0.02em;
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
-    color: var(--color-site-nav-hover);
-}
 
+.current::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404BBF;
+    bottom: -1px;
+}
+.current::after,
+.current::after:hover,
+.current::after:hover {
+   background-color:#404BBF;
+}
+/*adressssssssssssssssssssssssssssssssssssssssssssssssssssss*/
 /*addres*/ 
 .address {
     margin: 0;
@@ -262,9 +290,6 @@ span {
     margin-right: auto;
     margin-left: auto;
 
-    
-    
-
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     letter-spacing: 0.04em;
@@ -281,14 +306,21 @@ span {
     background-color: var(--background-color-first-btn-hover); 
 }
 
-
-
-
+.first-btn {
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0,2, 1);
+}
 
 .first-btn:hover,
 .first-btn:focus {
+    border-radius: 4px;
+    color: var(--color-first-btn);
+    background-color: var(--background-color-first-btn-hover);
 
 }
+
+
 
 
 
@@ -437,12 +469,25 @@ span {
 }
 .social-link:hover,
 .social-link:focus {
-    background-color: #404bbf;
+    background-color: var(--background-color-social)
 }
 .social-icon {
     fill:var(--fill);
    
 }
+
+.social-link {
+    transition-property: border-radius, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover,
+.social-link:focus {
+    border-radius: 50%;
+    background-color: #31d0aa;
+}
+
 
 .flex-caption-next { 
     display: flex;
@@ -607,6 +652,17 @@ span {
     background-color: #31d0aa;
 }
 
+.social-footer-link {
+    transition-property: border-radius, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.social-footer-link {
+    border-radius: 50%;
+    background-color: var(--background-color-social-footer-link);
+}
+
 .footer-icon {
     fill: var(--fill-footer-icon);
     
@@ -731,6 +787,20 @@ span.span-footer {
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
             0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+.button-portfolio {
+    transition-property: border, color, box-shadow, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button-portfolio:hover,
+.button-portfolio:focus {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    color: var(--color-button-portfolio);
+    background-color: var(--background-color-button-portfolio);
+}
 
 .portfolio-icon {
     display: block;
@@ -799,4 +869,34 @@ width: calc((100% - 48px) / 3);
     background-color: var(--background-color-button-portfolio-hover);
     border: 1px solid transparent;
 
+}
+
+
+
+
+
+/*modalllllllllllllllllllllllllllllllllllllllllllll*/
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 165, 0, 0.5);
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    min-height: 300px;
+    min-width: 400px;
+    padding: 15px;
+    background-color: #FFFFFF;
 }

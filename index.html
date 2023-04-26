@@ -55,7 +55,7 @@
 
                 <h1 class="first-title">Effective Solutions
              for Your Business</h1>
-                <button class="first-btn">Order Service</button>
+                <button class="first-btn" type="button"data-modal-open>Order Service</button>
                
            
             </div>
@@ -72,7 +72,7 @@
                         <li class="list-item list">
                             <div class="antenna">
                                 <svg width="64" height="64" class="diagram">
-                                    <use href="./images/icons.svg#antenna"></use>
+                                    <use href="./images/icons.svg#icon-antenna"></use>
                                 </svg>
                             </div>
                             <h3 class="section-title-flex">Strategy</h3>
@@ -390,7 +390,7 @@
 
        
        </main>
-       <!--FOOTER-->
+       <!--FOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR-->
        
        <footer class="footer link">
         <div class="container-icon container">
@@ -440,18 +440,32 @@
              </div>
             
            
+             
+            </footer>
         </div>
+
+
+
+
+
+
+
+
+<!--MODALLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL-->
         
-           </footer>
-        <!--FOOTER-END-->
-        <button>open</button>
-        <div class="backdrop is-hidden">
+      
+        <div class="backdrop is-hidden" data-modal>
             <div class="modal">
 
-                <button>closed</button>
+                <button class="modal-button" type="button" data-modal-close>
+                    <svg class="modal-icon" width="8" height="8">
+                        <use href="./images/icons.svg#icon-close-black"></use>
+                    </svg>
+                </button>
 
             </div>
         </div>
+        <script src=".//js/modal.js"></script>
     
 </body>
 </html>
